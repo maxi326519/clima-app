@@ -7,7 +7,7 @@ import Cards from './components/Cards.jsx'
 
 export default function App(){
 
-  const ciudad = {
+/*   const ciudad = {
     min: 32,
     max: 35,
     img: "03n",
@@ -19,10 +19,9 @@ export default function App(){
     clouds: 40,
     latitud: -16.92,
     longitud: 145.77
-  };
+  }; */
 
   const [cities, setCities] = useState([ciudad]);
-  
 
   function onSearch(ciudad) {
   
