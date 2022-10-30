@@ -1,5 +1,4 @@
 export const GET_CITY =  'GET_CITY';
-export const ADD_CITY =  'ADD_CITY';
 export const REMOVE_CITY = 'REMOVE_CITY';
 export const GET_LOCATION = 'GET_LOCATION';
 
@@ -19,13 +18,6 @@ export function getCity(city){
     }
 }
 
-export function addCity(city){
-    return {
-        type: ADD_CITY,
-        payload: city
-    }
-}
-
 export function removeCity(id){
     return {
         type: REMOVE_CITY,
@@ -35,7 +27,7 @@ export function removeCity(id){
 
 export function getLocation(){
     return dispatch => {
-        return fetch(`https://ipinfo.io/186.22.16.148?token=${token}`)
+        return fetch(`https://ipinfo.io/?token=${token}`)
             .then( res => res.json() )
             .then( data => {
                 dispatch({

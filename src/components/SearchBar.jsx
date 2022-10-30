@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './styles/SearchBar.scss'
 
-export default function SearchBar({ darkMode, onSearch }) {
+export default function SearchBar({ darkMode, getCity }) {
+
   const [city, setCity] = useState("");
 
   function handleSubmit(e){
     e.preventDefault();
-    onSearch(city);
+    getCity(city);
   }
   
   return (
