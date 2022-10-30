@@ -9,7 +9,7 @@ export default function Nav({ darkMode, handleThemeChange, onSearch }) {
     <nav>
       <div className="nav width-container">
         <div className="nav-logo">
-          <img className="icon" src={icon} />
+          <img className="icon" src={icon} alt='icon'/>
           <h1 className="title">Weather App</h1>
         </div>
         <Switch darkMode={darkMode} handleThemeChange={handleThemeChange} />
