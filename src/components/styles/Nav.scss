@@ -8,6 +8,11 @@ nav{
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
 
+    .icon{
+        width: 50px;
+        margin:10px;
+    }
+
     .nav{
         display: flex;
         flex-wrap: wrap;
@@ -15,11 +20,20 @@ nav{
         padding: 0 20px;
         height: 100%;
 
-        h1{
+        .nav-logo{
             flex-grow: 1;
-            margin: 0;
-            text-align: left;
-            color: var.$font;
+            display: flex;
+            align-items: center;
+
+            img{
+                filter: invert(100%);
+            }
+
+            h1{
+                margin: 0;
+                text-align: left;
+                color: var.$font;
+            }
         }
     }
 
