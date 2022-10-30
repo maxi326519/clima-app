@@ -26,6 +26,7 @@
         color: white;
 
         &:hover{
+            cursor: pointer;
             color: var.$primary;
             background-color: white;
             border-color: var.$primary;
@@ -46,17 +47,26 @@
 .search-bar-dark{
     input{
         background-color: var.$background-2;
+        
         color: var.$font;
+
         &:hover{
+            border-color: var.$secundary;
             box-shadow: none;
         }
     }
 
     button{
+        background-color: var.$background;
+        border-color: var.$background-2;
+
         &:hover{
             background-color: var.$background-2;
+            border-color: var.$secundary;
+            color: var.$secundary;
             box-shadow: none;
         }
+
         &:active{
             background-color: var.$background-2;
             box-shadow: none;

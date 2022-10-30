@@ -1,6 +1,8 @@
 @use 'var';
 
 nav{
+    position: relative;
+    z-index: 100;
     height: 60px;
     box-shadow: 0 0 10px 5px #0004;
     -webkit-backdrop-filter: blur(15px);
@@ -27,7 +29,7 @@ nav{
 
         .nav{
             justify-content: center;
-            padding: 10px;
+            padding: 10px 20px;
             
             h1{
                 width: 100%;

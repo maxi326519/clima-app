@@ -1,13 +1,14 @@
 import Card from './Card';
 import './styles/Cards.scss';
 
-export default function Cards({cities, onClose}) {
+export default function Cards({ darkMode, cities, onClose }) {
 
   if(cities.length !== 0){
     return (
       <div className='card-content'>
         {cities.map(city =>
           <Card
+            darkMode={ darkMode }
             key={city.id}
             max={city.max}
             min={city.min}

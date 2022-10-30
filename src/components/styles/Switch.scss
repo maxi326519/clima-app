@@ -5,7 +5,6 @@ $dark: #e7f;
 .switch{
     position: relative;
     width: 48px;
-    overflow: hidden;
     margin-right: 10px;
     border-radius: 20px;
     border: 5px solid var.$primary;
@@ -33,23 +32,56 @@ $dark: #e7f;
         }
     }
 
+    &:before{
+        content: 'Change to Dark Mode';
+        position: absolute;
+        top: 160%;
+        left: -50%;
+        opacity: 0;
+        width: 80px;
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 20px;
+        color: var.$primary;
+        font-weight: bold;
+        background-color: white;
+        transform: scale(0.8);
+        transition: 0.2s ease;
+    }
+
     &:hover{
+        cursor: pointer;
+        
         .switch-btn{
             border-color: $light;
         }
+
         background-color: $light;
         box-shadow: 0 0 5px 5px #0004;
         transition: 0.2s;
+
+        &:before{
+            top: 200%;
+            opacity: 100%;
+            transform: scale(1);
+            transition: 0.5s;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &:before{
+            display: none;
+        }
     }
 }
 
 .switch-dark{
-    background-color: var.$primary;
+    background-color: var.$background;
     border-color: var.$background-2;
 
     .switch-btn{
         left: 50%;
-        border-color: var.$primary;
+        border-color: var.$background;
         background-color: var.$background-2;
         transition: 0.2s;
     }
@@ -59,5 +91,11 @@ $dark: #e7f;
             border-color: $dark;
         }
         background-color: $dark;
+    }
+
+    &:before{
+        content: 'Change to Light Mode';
+        background-color: var.$background-2;
+        color: $dark;
     }
 }
