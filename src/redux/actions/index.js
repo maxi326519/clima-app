@@ -7,7 +7,7 @@ let token = 'b7d92a461335b6';
 
 export function getCity(city){
     return dispatch => {
-        return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+        return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
             .then(r => r.json())
             .then( data => {
                 dispatch({
