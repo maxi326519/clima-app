@@ -1,0 +1,63 @@
+@use 'var';
+$light: #fe7;
+$dark: #e7f;
+
+.switch{
+    position: relative;
+    width: 48px;
+    overflow: hidden;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 5px solid var.$primary;
+    background-color: white;
+    transition: 0.2s;
+
+    .switch-btn{
+        display: flex;
+        position: relative;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: var.$primary;
+        box-shadow: 0 0 5px 5px #0004;
+        border: 2px solid white;
+        transition: 0.2s;
+
+        img{
+            width: 70%;
+            height: 70%;
+            filter: invert(100%);
+        }
+    }
+
+    &:hover{
+        .switch-btn{
+            border-color: $light;
+        }
+        background-color: $light;
+        box-shadow: 0 0 5px 5px #0004;
+        transition: 0.2s;
+    }
+}
+
+.switch-dark{
+    background-color: var.$primary;
+    border-color: var.$background-2;
+
+    .switch-btn{
+        left: 50%;
+        border-color: var.$primary;
+        background-color: var.$background-2;
+        transition: 0.2s;
+    }
+
+    &:hover{
+        .switch-btn{
+            border-color: $dark;
+        }
+        background-color: $dark;
+    }
+}

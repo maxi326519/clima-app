@@ -6,8 +6,18 @@ import Nav from './components/Nav.jsx'
 import Cards from './components/Cards.jsx'
 
 export default function App(){
+  const [darkMode, setDark] = useState({ isActive: false, class: '-light' })
 
-/*   const ciudad = {
+  function handleThemeChange(){
+    if(darkMode.isActive)
+      setDark({ isActive: false, class: '-light' })
+    else
+      setDark({ isActive: true, class: '-dark' })
+  }
+
+  // Cambiar a Redux ----------------------------------------------------------------------------------------------------
+  
+  const ciudad = {
     min: 32,
     max: 35,
     img: "03n",
@@ -19,10 +29,10 @@ export default function App(){
     clouds: 40,
     latitud: -16.92,
     longitud: 145.77
-  }; */
+  };
 
   const [cities, setCities] = useState([ciudad]);
-
+  
   function onSearch(ciudad) {
   
     let apiKey = '4ae2636d8dfbdc3044bede63951a019b';
@@ -49,16 +59,25 @@ export default function App(){
           alert("Ciudad no encontrada");
         }
       });
-    }
-
-  function onClose(id){
-    setCities(oldCities => oldCities.filter(c => c.id != id));
   }
 
+  function onClose(id){
+    setCities(oldCities => oldCities.filter(c => c.id !== id));
+  }
+  // Cambiar a Redux ------------------------------------------------------------------------------------------
+  
   return (
-    <div className="App">
-      <Nav onSearch={onSearch}/>
-      <Cards cities={cities} onClose={onClose}/>
-    </div>  
+    <div className={`App App${darkMode.class}`}>
+      <Nav
+        darkMode={ darkMode }
+        onSearch={ onSearch }
+        handleThemeChange={ handleThemeChange }
+      />
+      <Cards
+        darkMode={ darkMode }
+        cities={ cities }
+        onClose={ onClose }
+      />
+    </div>
   );
 }

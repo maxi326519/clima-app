@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
-import './styles/SearchBar.css'
+import './styles/SearchBar.scss'
 
-export default function SearchBar({onSearch}) {
-  // acá va tu código
+export default function SearchBar({ darkMode, onSearch }) {
   const [city, setCity] = useState("");
 
+  function handleSubmit(e){
+    e.preventDefault();
+    onSearch(city);
+  }
+  
   return (
-    <div className='container'>
+    <form className={`search-bar search-bar${ darkMode.class }`} onSubmit={handleSubmit}>
       <input
-        className='input-city'
-        placeholder='City...'
         type='text'
+        placeholder='City...'
         onChange={e => setCity(e.target.value)}
       />
-      <button className='search' onClick={()=>{onSearch(city)}}>Search</button>
-    </div>
+      <button className='sear-bar__btn' type='submit'>Search</button>
+    </form>
   )
 };

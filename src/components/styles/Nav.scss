@@ -1,0 +1,39 @@
+@use 'var';
+
+nav{
+    height: 60px;
+    box-shadow: 0 0 10px 5px #0004;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+
+    .nav{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0 20px;
+        height: 100%;
+
+        h1{
+            flex-grow: 1;
+            margin: 0;
+            text-align: left;
+            color: var.$font;
+        }
+    }
+
+    @media screen and (max-width: 760px) {
+
+        height: max-content;
+
+        .nav{
+            justify-content: center;
+            padding: 10px;
+            
+            h1{
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@use 'var';
+
+.search-bar{
+    input, button{
+        padding: 5px 10px;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 20px;
+        transition: 0.2s;
+    }
+
+    input{
+        margin-right: 10px;
+
+        &:hover{
+            box-shadow: 0 0 5px 5px #0004;
+            border-color: var.$primary;
+        }
+
+        @media screen and (max-width: 360px){ width:140px}
+    }
+
+    button{
+        border-color: var.$primary;
+        background-color: var.$primary;
+        color: white;
+
+        &:hover{
+            color: var.$primary;
+            background-color: white;
+            border-color: var.$primary;
+            box-shadow: 0 0 5px 5px #0004;
+        }
+
+        &:active{
+            color: var.$primary;
+            background-color: white;
+            border-color: var.$primary;
+            box-shadow: 0 0 5px 5px #0004;
+            filter:brightness(80%);
+            transform: scale(0.95);
+        }
+    }
+}
+
+.search-bar-dark{
+    input{
+        background-color: var.$background-2;
+        color: var.$font;
+        &:hover{
+            box-shadow: none;
+        }
+    }
+
+    button{
+        &:hover{
+            background-color: var.$background-2;
+            box-shadow: none;
+        }
+        &:active{
+            background-color: var.$background-2;
+            box-shadow: none;
+        }
+    }
+
+}

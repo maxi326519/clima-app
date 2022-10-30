@@ -1,11 +1,8 @@
-import React from 'react';
 import Card from './Card';
-import './styles/Cards.css';
+import './styles/Cards.scss';
 
 export default function Cards({cities, onClose}) {
-  // acá va tu código
-  // tip, podés usar un map\
-  console.log(cities);
+
   if(cities.length !== 0){
     return (
       <div className='card-content'>
@@ -24,7 +21,7 @@ export default function Cards({cities, onClose}) {
     )
   }else{
     return(
-      <div>Sin ciudades</div>
+      <div className="cards-empty"><b className="text">No cities</b>Press "Search"<br></br>to add a city</div>
     )
   }
 };
