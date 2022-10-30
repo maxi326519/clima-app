@@ -19,10 +19,11 @@ export function getCity(city){
 }
 
 export function removeCity(id){
-    return {
-        type: REMOVE_CITY,
-        payload: id
-    }
+    return dispatch =>
+        dispatch({
+            type: REMOVE_CITY,
+            payload: id
+        })
 }
 
 export function getLocation(){

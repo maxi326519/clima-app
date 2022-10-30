@@ -11,7 +11,7 @@ export default function Cards({ darkMode }) {
   const cities = useSelector( state => state.cities )
   const dispatch = useDispatch();
 
-  if(cities.length !== 0){
+  if(cities.data.length !== 0){
     return (
       <div className='card-content'>
         {
@@ -20,24 +20,22 @@ export default function Cards({ darkMode }) {
               <Card
                 darkMode={ darkMode }
                 key={ city.id }
-                max={ city.max }
-                min={ city.min }
+                max={ city.main.temp_max }
+                min={ city.main.temp_min }
                 name={ city.name }
-                img={ city.img }
-                onClose={ ()=>dispatch(removeCity(city.id) )}
+                img={ city.weather[0].icon }
                 id={ city.id }
+                onClose={ () =>{ console.log('close'); dispatch(removeCity(city.id) )}}
               />
             )
           })
         }
-        <ErrorAlert darkMode={ darkMode } error={ cities.error }/>
       </div>
     )
   }else{
     return(
       <div>
         <div className="cards-empty"><b className="text">No cities</b>Press "Search"<br></br>to add a city</div>
-        <ErrorAlert darkMode={ darkMode } error={ cities.error }/>
       </div>      
     )
   }

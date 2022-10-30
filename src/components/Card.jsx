@@ -14,11 +14,11 @@ export default function Card({ darkMode, min, max, name, img, onClose}) {
         <div className="card__data">
           <div className="data__climate">
             <span>Min</span>
-            <span>{min}º</span>
+            <span>{ Math.round(min) } º</span>
           </div>
           <div className="data__climate">
             <span>Max</span>
-            <span>{max}º</span>
+            <span>{ Math.round(max) } º</span>
           </div>
           <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt='climate'></img>
         </div>
