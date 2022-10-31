@@ -14,11 +14,11 @@ export default function Nav({ darkMode, handleThemeChange }) {
   return (
     <nav>
       <div className="nav width-container">
-        <div className="nav-logo">
+        <div className="nav-panel">
           <img className="icon" src={icon} alt='icon'/>
           <h1 className="title">Weather App</h1>
+          <Switch darkMode={darkMode} handleThemeChange={handleThemeChange} />
         </div>
-        <Switch darkMode={darkMode} handleThemeChange={handleThemeChange} />
         <SearchBar darkMode={darkMode} getCity={ city => dispatch(getCity(city)) } />
       </div>
     </nav>

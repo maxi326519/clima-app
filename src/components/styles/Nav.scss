@@ -1,8 +1,10 @@
 @use 'var';
 
 nav{
-    position: relative;
+    position: fixed;
     z-index: 100;
+    width: 100%;
+    top: 0;
     height: 60px;
     box-shadow: 0 0 10px 5px #0004;
     -webkit-backdrop-filter: blur(15px);
@@ -20,7 +22,7 @@ nav{
         padding: 0 20px;
         height: 100%;
 
-        .nav-logo{
+        .nav-panel{
             flex-grow: 1;
             display: flex;
             align-items: center;
@@ -30,6 +32,7 @@ nav{
             }
 
             h1{
+                flex-grow: 1;
                 margin: 0;
                 text-align: left;
                 color: var.$font;
@@ -45,10 +48,12 @@ nav{
             justify-content: center;
             padding: 10px 20px;
             
-            .nav-logo {
-                justify-content: center;
-                width: 100%;
-                margin-bottom: 20px;
+            .nav-panel {
+                position: absolute;
+                right: 0;
+                width: 90%;
+                height: 100vh;
+                background-color: black;
             }
         }
     }
