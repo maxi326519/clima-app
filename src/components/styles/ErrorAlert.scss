@@ -54,7 +54,7 @@
 
 .alert-dark{
     .alert__error{
-        background-color: var.$background;
+        background-color: var.$background-dark;
     }
 
     span{
@@ -63,7 +63,7 @@
     }
 
     button{
-        color: var.$background;
+        color: var.$background-dark;
         font-weight: bold;
         background-color: var.$secundary;
     }

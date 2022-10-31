@@ -61,15 +61,13 @@
         .emergente{
             position: absolute;
             opacity: 0;
-            top: 50px;
+            top: 60px;
             left: 0;
             width: 100%;
-            box-shadow: 0 0 10px 5px #0004;
-            background-color: #0004;
+            border-radius: 20px;
+            box-shadow: 0 5px 5px 2px #0004;
+            background-color: var.$background;
             transition: 0.2s;
-
-            input, button{
-            }
         }
 
         &:hover{
@@ -105,7 +103,7 @@
     }
 
     button{
-        background-color: var.$background;
+        background-color: var.$background-dark;
         border-color: var.$background-2;
 
         &:hover{
@@ -118,6 +116,12 @@
         &:active{
             background-color: var.$background-2;
             box-shadow: none;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .emergente{
+            background-color: var.$background-dark;
         }
     }
 

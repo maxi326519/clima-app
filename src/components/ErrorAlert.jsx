@@ -12,6 +12,8 @@ export default function ErrorAlert({ darkMode, error }){
     useEffect(()=>{
         if(error.hasOwnProperty('cod')){
             setState({ display: 'flex' });
+        }else{
+            setState({ display: 'none' });
         }
     }, [error]);
 

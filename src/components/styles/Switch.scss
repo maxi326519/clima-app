@@ -76,12 +76,12 @@ $dark: #e7f;
 }
 
 .switch-dark{
-    background-color: var.$background;
+    background-color: var.$background-dark;
     border-color: var.$background-2;
 
     .switch-btn{
         left: 50%;
-        border-color: var.$background;
+        border-color: var.$background-dark;
         background-color: var.$background-2;
         transition: 0.2s;
     }
