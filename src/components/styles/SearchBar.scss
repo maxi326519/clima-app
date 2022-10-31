@@ -1,12 +1,19 @@
 @use 'var';
 
 .search-bar{
+    display: inline-block;
+
     input, button{
+        overflow: hidden;
         padding: 5px 10px;
         border-width: 2px;
         border-style: solid;
         border-radius: 20px;
         transition: 0.2s;
+    }
+    
+    .icon{
+        display: none;
     }
 
     input{
@@ -16,13 +23,11 @@
             box-shadow: 0 0 5px 5px #0004;
             border-color: var.$primary;
         }
-
-        @media screen and (max-width: 360px){ width:140px}
     }
 
     button{
         border-color: var.$primary;
-        background-color: var.$primary;
+        background-color: var.$primary; 
         color: white;
 
         &:hover{
@@ -42,12 +47,55 @@
             transform: scale(0.95);
         }
     }
+
+    @media screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+
+        .icon{
+            display: inline-block;
+            margin-right: 10px;
+            transition: 0.2s;
+        }
+
+        .emergente{
+            position: absolute;
+            opacity: 0;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 0 10px 5px #0004;
+            background-color: #0004;
+            transition: 0.2s;
+
+            input, button{
+            }
+        }
+
+        &:hover{
+            z-index: 100;
+            border-radius: 20px;
+
+            .icon{
+                width: 20px;
+                transition: 0.2s;
+            }
+
+            .emergente{
+                opacity: 100%;
+                transition: 0.2s;
+
+                input, button{
+                    margin: 10px 5px;
+                }
+            }
+        }
+    }
 }
 
 .search-bar-dark{
     input{
         background-color: var.$background-2;
-        
         color: var.$font;
 
         &:hover{
