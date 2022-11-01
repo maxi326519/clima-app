@@ -31,6 +31,7 @@ export default function Nav({ darkMode, handleThemeChange }) {
   return (
     <nav className="to-bottom">
       <div className={`nav nav${darkMode.class} width-container`}>
+        <div className=""></div>
         <div className={`nav-panel ${options.class}`}>
           <div className="logo to-right">
             <img className="icon" src={icon} alt="icon" />

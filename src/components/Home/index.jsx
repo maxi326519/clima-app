@@ -36,8 +36,8 @@ export default function Home({ darkMode, handleThemeChange }) {
     <div className="home">
       <div className="home-container width-container">
         <div className="text-content to-left">
-          <h1 className="to-bottom">Welcome to the Weather App</h1>
           <div className="flex">
+            <h1 className="to-bottom">Welcome to the Weather App</h1>
             <Link to="/search" className={`btn btn${darkMode.class} show`}>
               Search for city
             </Link>

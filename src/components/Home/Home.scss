@@ -10,6 +10,7 @@
         display: flex;
         flex-direction: row-reverse;
         padding: 50px 20px;
+        margin-top: 60px;
 
         .text-content{
             flex-grow: 1;
@@ -18,20 +19,23 @@
             align-items: center;
             margin-left: 50px;
             
-            h1{
-                margin: 10px;
-                font-size: 60px;
-                color: white;
-            }
-
             .flex{
                 display: flex;
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
                 flex-grow: 1;
                 
+                h1{
+                    margin: 10px;
+                    font-size: 60px;
+                    color: white;
+                }
+
                 .btn{
-                    display: inline-block;
+                    width: max-content;
                     margin: 20px;
+                    box-shadow: #0004;
                 }
             }
             
@@ -44,9 +48,14 @@
                 .card__close{display: none;}
             }
         }
-
     }
     
+    @media screen and (max-height: 768px), screen and (max-width: 1200px){
+        .card-detail{
+            display: none;
+        }
+    }
+
     @media screen and (max-width: 768px) {
 
         overflow-y: scroll;
@@ -57,13 +66,14 @@
             width: 100% !important;
 
             .text-content{
+                align-items: flex-end;
                 flex-grow: 1;
                 margin: 0;
-                margin-top: 60px;
     
-                h1{
-                    margin: 40px 0;
-                    font-size: 40px;
+                .flex h1{
+                    text-align: left;
+                    margin: 40px;
+                    font-size: 50px;
                 }
 
                 .cards{
