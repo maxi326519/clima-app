@@ -24,16 +24,57 @@
                 color: white;
             }
 
-            .btn{
-                margin: 20px;
-            }
-
-            .cards{
+            .flex{
+                display: flex;
+                align-items: center;
                 flex-grow: 1;
+                
+                .btn{
+                    display: inline-block;
+                    margin: 20px;
+                }
+            }
+            
+            .cards{
                 display: flex;
                 justify-content: center;
                 align-items: end;
                 width: 100%;
             }
-        }}
+        }
+
+    }
+    
+    @media screen and (max-width: 768px) {
+
+        overflow-y: scroll;
+        align-items: flex-start;
+
+        .home-container{
+            flex-direction: column;
+            width: 100% !important;
+
+            .text-content{
+                flex-grow: 1;
+                margin: 0;
+                margin-top: 60px;
+    
+                h1{
+                    margin: 40px 0;
+                    font-size: 40px;
+                }
+
+                .cards{
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 40px;
+                }
+            }
+    
+            .card-detail{
+                flex-grow: 0;
+                display: none;
+            }
+        }
+    }
 }

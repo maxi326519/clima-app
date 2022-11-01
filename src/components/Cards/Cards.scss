@@ -4,11 +4,11 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
-    max-height: 90%;
     padding-top: 60px;
     filter:brightness(100%, 50%);
 
     @media screen and (max-width: 768px){
+        height: 90vh;
         overflow-y: scroll;
     }
 }
@@ -28,9 +28,5 @@
         display: block;
         margin-bottom: 10px;
         font-size: 20px
-    }
-
-    @media screen and (max-width: 768px) {
-        
     }
 }

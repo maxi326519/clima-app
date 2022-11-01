@@ -1,95 +1,141 @@
-.to-left{
+$time: 1s;
+$fast: 0.2s;
+$move: 5%;
+
+.to-left {
+  animation: $time ease toLeft;
+}
+
+.to-right {
+  animation: $time ease toRight;
+}
+
+.to-up {
+  animation: $time ease toUp;
+}
+
+.to-bottom {
+  animation: $time ease toBottom;
+}
+
+.to-up-px {
+  animation: $time ease toUpPx;
+}
+
+.to-bottom-px {
+  animation: $time ease toBottomPx;
+}
+
+.show {
+  animation: $time ease Show;
+}
+
+.hidden {
+  animation: $fast ease-in Hidden forwards;
+}
+
+@keyframes Show {
+  0% {
     position: relative;
-    animation: 1s ease toLeft forwards;
-}
-
-.to-right{
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
     position: relative;
-    animation: 1s ease toRight forwards;
+    opacity: 100%;
+    transform: scale(1);
+  }
 }
 
-.to-up{
+@keyframes Hidden {
+  0% {
     position: relative;
-    animation: 1s ease toUp forwards;
-}
-
-.to-bottom{
+    opacity: 100%;
+    transform: scale(1);
+  }
+  100% {
     position: relative;
-    animation: 1s ease toBottom forwards;
+    opacity: 0;
+    transform: scale(0.5);
+  }
 }
 
-.to-show{
+@keyframes toLeft {
+  0% {
     position: relative;
-    animation: 1s ease toShow forwards;
-}
-
-.to-hidden{
+    left: $move;
+    opacity: 0;
+  }
+  100% {
     position: relative;
-    animation: 0.2s ease-in toHidden forwards;
+    left: 0;
+    opacity: 100%;
+  }
 }
 
-@keyframes toShow{
-    0%{
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    100%{
-        opacity: 100%;
-        transform: scale(1);
-    }
+@keyframes toRight {
+  0% {
+    position: relative;
+    right: $move;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    right: 0;
+    opacity: 100%;
+  }
 }
 
-@keyframes toHidden{
-    0%{
-        opacity: 100%;
-        transform: scale(1);
-    }
-    100%{
-        opacity: 0;
-        transform: scale(0.5);
-    }
+@keyframes toUp {
+  0% {
+    position: relative;
+    bottom: -$move;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    bottom: 0;
+    opacity: 100%;
+  }
 }
 
-@keyframes toLeft{
-    0%{
-        right: -10%;
-        opacity: 0;
-    }
-    100%{
-        right: 0;
-        opacity: 100%;
-    }
+@keyframes toBottom {
+  0% {
+    position: relative;
+    top: -50px;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+
+    top: 0;
+    opacity: 100%;
+  }
 }
 
-@keyframes toRight{
-    0%{
-        left: -10%;
-        opacity: 0;
-    }
-    100%{
-        left: 0;
-        opacity: 100%;
-    }
+@keyframes toUpPx {
+  0% {
+    position: relative;
+    bottom: -50px;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    bottom: 0;
+    opacity: 100%;
+  }
 }
 
-@keyframes toUp{
-    0%{
-        bottom: -10%;
-        opacity: 0;
-    }
-    100%{
-        bottom: 0;
-        opacity: 100%;
-    }
-}
+@keyframes toBottomPx {
+  0% {
+    position: relative;
+    top: -50px;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
 
-@keyframes toBottom{
-    0%{
-        top: -10%;
-        opacity: 0;
-    }
-    100%{
-        top: 0;
-        opacity: 100%;
-    }
+    top: 0;
+    opacity: 100%;
+  }
 }

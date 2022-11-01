@@ -1,7 +1,7 @@
 @use '../Others/styles/var.scss';
 
 nav{
-    position: fixed;
+    position: fixed !important;
     z-index: 100;
     top: 0;
     width: 100%;
@@ -35,6 +35,17 @@ nav{
                     margin: 0;
                     text-align: left;
                     color: var.$font;
+                }
+            }
+
+            .nav-panel__links{
+                padding: 5px 10px;
+                margin-right: 20px;
+                border-radius: 10px;
+                text-decoration: none;
+
+                &:active{
+                    transform: scale(0.9);
                 }
             }
 
@@ -76,14 +87,18 @@ nav{
                     h1{margin-left: 10px}
 
                 }
-
-                span{
-                    width: 80%;
-                    margin: 10px;
-                    text-align: left;
+                
+                .nav-panel__links{
+                    padding: 10px 0;
+                    width: calc(100% - 20px);
+                    margin: 0;
                     font-size: 20px;
-                    opacity: 0;
-                }                    
+                    text-decoration: none;
+                }
+
+                .switch{
+                    margin-top: 50px;
+                }
             }
 
             .menu{
@@ -116,12 +131,44 @@ nav{
             background-color: var.$background;
         }
     }
+    
+    .nav-panel{
+        .logo{
+            img{
+                filter: invert(100%);
+            }
+        }
+
+        .nav-panel__links{
+            color: white;
+
+            &:hover{
+                background-color: #0004;
+            }
+        }
+    }
 }
 
 .nav-dark {
     @media screen and (max-width: 760px){
         .menu{
             background-color: var.$background-dark;
+        }
+    }
+
+    .nav-panel{
+        .logo{
+            img{
+                filter: invert(60%) sepia(21%) saturate(2933%) hue-rotate(235deg) brightness(99%) contrast(103%);
+            }
+        }
+
+        .nav-panel__links{
+            color: var.$secundary;
+
+            &:hover{
+                background-color: var.$background-2;
+            }
         }
     }
 }

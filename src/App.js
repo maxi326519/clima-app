@@ -21,6 +21,7 @@ export default function App() {
 
   return (
     <div className={`App App${darkMode.class}`}>
+      <Nav darkMode={darkMode} handleThemeChange={handleThemeChange} />
       <Route
         path='/'
         exact
@@ -33,7 +34,6 @@ export default function App() {
         render={() => {
           return (
             <div>
-              <Nav darkMode={darkMode} handleThemeChange={handleThemeChange} />
               <Cards darkMode={darkMode} />
               <ErrorAlert darkMode={darkMode} error={error} />
             </div>

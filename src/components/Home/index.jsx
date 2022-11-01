@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getLocation, getCity, removeCity } from "../../redux/actions";
 
-import Switch from "../Others/Switch";
 import CardDetail from "../MoreDetails/CardDetail";
 import Card from "../Card";
 import "./Home.scss";
@@ -15,7 +14,7 @@ export default function Home({ darkMode, handleThemeChange }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('montaje');
+    console.log("montaje");
     if (!location.data.hasOwnProperty("city")) {
       dispatch(getLocation());
     } else {
@@ -28,7 +27,7 @@ export default function Home({ darkMode, handleThemeChange }) {
 
     if (city.length < 3) {
       console.log("Hay ciudades");
-/*       dispatch(getCity("Mexico"));
+      /*       dispatch(getCity("Mexico"));
       dispatch(getCity("Sydney")); */
     }
   });
@@ -38,8 +37,11 @@ export default function Home({ darkMode, handleThemeChange }) {
       <div className="home-container width-container">
         <div className="text-content to-left">
           <h1 className="to-bottom">Welcome to the Weather App</h1>
-          <Link to="/search" className={ `btn btn${ darkMode.class }` }>Search Weather</Link>
-          <Switch darkMode={darkMode} handleThemeChange={handleThemeChange} />
+          <div className="flex">
+            <Link to="/search" className={`btn btn${darkMode.class} show`}>
+              Search for city
+            </Link>
+          </div>
 
           {(() => {
             if (city.length >= 2) {

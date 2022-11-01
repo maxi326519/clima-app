@@ -12,7 +12,7 @@ export default function Switch({ darkMode, handleThemeChange}) {
   }, [darkMode]);
 
   return (
-    <div className={`switch switch${darkMode.class}`} onClick={ handleThemeChange }>
+    <div className={`switch switch${darkMode.class} show`} onClick={ handleThemeChange }>
       <div className="switch-btn">
         <img src={ svg } alt="svg" />
       </div>

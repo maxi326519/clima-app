@@ -41,11 +41,11 @@
 
 .btn-dark {
   color: var.$secundary;
-  background-color: var.$background-dark;
-  border-color: var.$background-dark;
+  background-color: var.$background-2;
+  border-color: var.$background-2;
   
   &:hover {
-    color: var.$background-dark;
+    color: var.$background-2;
     background-color: var.$secundary;
     border-color: var.$secundary;
 }
