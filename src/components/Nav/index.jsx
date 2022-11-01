@@ -43,9 +43,9 @@ export default function Nav({ darkMode, handleThemeChange }) {
           <Link className="nav-panel__links to-bottom" to="/search" onClick={ handleOptions }>
             <span>Search</span>
           </Link>
-          <Link className="nav-panel__links to-bottom" to="/about" onClick={ handleOptions }>
+{/*           <Link className="nav-panel__links to-bottom" to="/about" onClick={ handleOptions }>
             <span>About</span>
-          </Link>
+          </Link> */}
           <Switch darkMode={darkMode} handleThemeChange={handleThemeChange} />
         </div>
         <Route
