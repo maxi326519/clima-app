@@ -1,5 +1,6 @@
 export const GET_CITY =  'GET_CITY';
 export const REMOVE_CITY = 'REMOVE_CITY';
+export const REMOVE_ERROR = 'REMOVE_ERROR';
 export const GET_LOCATION = 'GET_LOCATION';
 
 let apiKey = '4ae2636d8dfbdc3044bede63951a019b';
@@ -24,6 +25,14 @@ export function removeCity(id){
             type: REMOVE_CITY,
             payload: id
         })
+}
+
+export function removeError(){
+    return dispatch =>{
+        dispatch({
+            type: REMOVE_ERROR
+        })
+    }
 }
 
 export function getLocation(){

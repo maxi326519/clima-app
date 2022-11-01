@@ -17,17 +17,18 @@ export default function CardDetail({
 }) {
   return (
     <div className="card-detail to-right">
-      <h1>{name}</h1>
-      <div className="card-data">
+      <h1 className="to-bottom">{name}</h1>
+      <div className="card-data to-right">
         <span>Pressure: {pressure}</span>
         <span>Humidity: {humidity}</span>
         <span>Description: {description}</span>
       </div>
       <img
+        className="to-right"
         src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
         alt="climate"
       />
-      <div className="card-temp">
+      <div className="card-temp to-up">
         <div className="temp">
           <img src={tempSvg} alt="temp"></img>
           <span className="temp-text-1">

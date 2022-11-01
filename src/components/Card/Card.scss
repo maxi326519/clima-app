@@ -2,7 +2,7 @@
 
 .container-card{
     overflow: hidden;
-    background-color: #0004;
+    background-color: var.$transparent;
     margin: 20px;
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);

@@ -1,15 +1,21 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeError } from '../../../redux/actions'
 import './ErrorAlert.scss'
 
 export default function ErrorAlert({ darkMode, error }){
 
     const [state, setState] = useState({ display: 'none' });
     const [animation, setAnimation] = useState('to-up')
+    const dispatch = useDispatch();
 
     function handleActive(){
         setAnimation('hidden');
         setTimeout(()=>{
             setState({ display: 'none' });
+            if(error.hasOwnProperty('cod')){
+                dispatch(removeError());
+            }
         },200);
     }
 

@@ -24,7 +24,8 @@ export default function Nav({ darkMode, handleThemeChange }) {
     console.log("cahnge");
     if (options.isActive)
       setOptions({ isActive: false, class: "", icon: bars });
-    else setOptions({ isActive: true, class: "menu", icon: arrow });
+    else
+      setOptions({ isActive: true, class: "menu", icon: arrow });
   }
 
   return (
@@ -35,13 +36,13 @@ export default function Nav({ darkMode, handleThemeChange }) {
             <img className="icon" src={icon} alt="icon" />
             <h1 className="title">Weather App</h1>
           </div>
-          <Link className="nav-panel__links to-bottom" to="/">
+          <Link className="nav-panel__links to-bottom" to="/" onClick={ handleOptions }>
             <span>Home</span>
           </Link>
-          <Link className="nav-panel__links to-bottom" to="/search">
+          <Link className="nav-panel__links to-bottom" to="/search" onClick={ handleOptions }>
             <span>Search</span>
           </Link>
-          <Link className="nav-panel__links to-bottom" to="/about">
+          <Link className="nav-panel__links to-bottom" to="/about" onClick={ handleOptions }>
             <span>About</span>
           </Link>
           <Switch darkMode={darkMode} handleThemeChange={handleThemeChange} />

@@ -6,7 +6,7 @@ import loading from "../../assets/gif/loading.gif";
 
 export default function Card({ darkMode, min, max, name, img, onClose, id }) {
 
-  const [state, setState] = useState('to-bottom')
+  const [state, setState] = useState('to-up-px')
 
   function handleShow(){
     setState('hidden');
@@ -22,7 +22,7 @@ export default function Card({ darkMode, min, max, name, img, onClose, id }) {
         <button className="card__close" onClick={handleShow}>
           x
         </button>
-        <span className="card__name to-bottom-px">{name}</span>
+        <span className="card__name to-left">{name}</span>
         <div className="card__data to-right">
           <div className="data__climate">
             <span>Min</span>
@@ -38,7 +38,7 @@ export default function Card({ darkMode, min, max, name, img, onClose, id }) {
             alt="climate"
           ></img>
         </div>
-        <Link to={`/details/${id}`} className={`btn btn${darkMode.class} to-up-px`}>
+        <Link to={`/details/${id}`} className={`btn btn${darkMode.class} to-left`}>
           More
         </Link>
       </div>

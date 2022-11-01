@@ -1,4 +1,4 @@
-import { GET_CITY, REMOVE_CITY, GET_LOCATION } from '../actions';
+import { GET_CITY, REMOVE_CITY, REMOVE_ERROR, GET_LOCATION } from '../actions';
 import dataTest from '../weather.json'
 import locationTest from '../location.json'
 import TEST from '../test.json'
@@ -43,6 +43,15 @@ export default function rootReducer(state = initialState, action){
                 cities: {
                     error: {},
                     data: state.cities.data.filter(c => c.id !== action.payload)
+                }
+            }
+
+        case REMOVE_ERROR:
+            return{
+                ...state,
+                cities: {
+                    error: {},
+                    data: state.cities.data
                 }
             }
 
