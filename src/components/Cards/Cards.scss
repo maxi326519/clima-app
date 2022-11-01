@@ -8,7 +8,8 @@
     filter:brightness(100%, 50%);
 
     @media screen and (max-width: 768px){
-        height: 90vh;
+        flex-direction: row-reverse;
+        max-height: 90vh;
         overflow-y: scroll;
     }
 }

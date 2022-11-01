@@ -24,7 +24,7 @@ export default function rootReducer(state = initialState, action){
                     ...state,
                     cities: {
                         error: {},
-                        data: [ action.payload, ...state.cities.data ]
+                        data: [ ...state.cities.data, action.payload ]
                     }
                 }
             }else{
