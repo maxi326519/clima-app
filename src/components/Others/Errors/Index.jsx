@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './styles/ErrorAlert.scss'
+import './ErrorAlert.scss'
 
 export default function ErrorAlert({ darkMode, error }){
 

@@ -1,0 +1,52 @@
+.card-detail{
+    overflow: hidden;
+    padding: 20px;
+    min-width: min-content;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+
+    background-color: #0004;
+    color: white;
+
+    .card-data{
+        padding: 0 40px;
+        text-align: left;
+        span{display: block;}
+    }
+
+    .card-temp{
+        border-radius: 20px;
+        overflow: hidden;
+        outline: 1px solid white;
+        display: flex;
+        text-align: left;
+
+        img{filter: invert(100%)}
+
+        .temp{
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            outline: 1px solid white;
+
+            img{
+                width: 60px;
+                margin: 10px;
+            }
+            .temp-number-1{ font-size: 60px;}
+        }
+
+        .temp-min-max{
+
+            img{width: 30px;}
+            .temp-number{font-size: 20px;}
+        }
+    }
+
+    img{
+        width: 300px;
+    }
+}

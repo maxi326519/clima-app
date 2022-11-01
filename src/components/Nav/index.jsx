@@ -1,14 +1,15 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-import { getCity } from '../redux/actions';
+import { getCity } from '../../redux/actions';
 
-import Switch from "./Switch.jsx";
-import SearchBar from "./SearchBar.jsx";
+import Switch from "../Others/Switch";
+import SearchBar from "../SearchBar";
 
-import icon from "../assets/svg/icon.svg";
-import bars from "../assets/svg/bars.svg";
-import arrow from "../assets/svg/arrow.svg";
-import "./styles/Nav.scss";
+import icon from "../../assets/svg/icon.svg";
+import bars from "../../assets/svg/bars.svg";
+import arrow from "../../assets/svg/arrow.svg";
+import "./Nav.scss";
 
 export default function Nav({ darkMode, handleThemeChange }) {
 
@@ -24,15 +25,15 @@ export default function Nav({ darkMode, handleThemeChange }) {
   } 
 
   return (
-    <nav>
+    <nav className="to-bottom">
       <div className={`nav nav${ darkMode.class } width-container`}>
         <div className={`nav-panel ${ options.class }`}>
-          <div className='logo'>
+          <div className='logo to-right'>
             <img className="icon" src={icon} alt='icon'/>
             <h1 className="title">Weather App</h1>
           </div>
-          <span>Home</span>
-          <span>About me</span>
+          <Link to='/' class='to-bottom'><span>Home</span></Link>
+          <Link to='/about' class='to-up'><span>About</span></Link>
           <Switch darkMode={darkMode} handleThemeChange={handleThemeChange} />
         </div>
         <SearchBar darkMode={darkMode} getCity={ city => dispatch(getCity(city)) } />

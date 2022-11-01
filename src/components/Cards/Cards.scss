@@ -4,8 +4,14 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
-}
+    max-height: 90%;
+    padding-top: 60px;
+    filter:brightness(100%, 50%);
 
+    @media screen and (max-width: 768px){
+        overflow-y: scroll;
+    }
+}
 
 .cards-empty{
     display: inline-block;

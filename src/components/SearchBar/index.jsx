@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./styles/SearchBar.scss";
+import "./SearchBar.scss";
 
-import search from "../assets/svg/search.svg";
+import search from "../../assets/svg/search.svg";
 
 export default function SearchBar({ darkMode, getCity }) {
   const [city, setCity] = useState("");
@@ -13,7 +13,7 @@ export default function SearchBar({ darkMode, getCity }) {
 
   return (
     <form
-      className={`search-bar search-bar${darkMode.class}`}
+      className={`search-bar search-bar${darkMode.class} to-left`}
       onSubmit={handleSubmit}
     >
       <img className="icon" src={search} alt="" />
@@ -23,7 +23,7 @@ export default function SearchBar({ darkMode, getCity }) {
           placeholder="City..."
           onChange={(e) => setCity(e.target.value)}
         />
-        <button className="sear-bar__btn" type="submit">
+        <button className={ `sear-bar__btn btn btn${ darkMode.class }` } type="submit">
           Search
         </button>
       </div>

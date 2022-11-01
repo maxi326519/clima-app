@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import './styles/Switch.scss'
-import sun from "../assets/svg/sun.svg";
-import moon from "../assets/svg/moon.svg";
+import './Switch.scss'
+import sun from "../../../assets/svg/sun.svg";
+import moon from "../../../assets/svg/moon.svg";
 
 export default function Switch({ darkMode, handleThemeChange}) {
   const [svg, setSvg] = useState(sun);

@@ -1,11 +1,10 @@
-@use 'var';
+@use '../styles/var.scss';
 $light: #fe7;
 $dark: #e7f;
 
 .switch{
     position: relative;
     width: 48px;
-    margin-right: 10px;
     border-radius: 20px;
     border: 5px solid var.$primary;
     background-color: white;

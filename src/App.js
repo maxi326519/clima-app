@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { Route } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "./App.css";
+import "./App.scss";
 
 // components
-import Nav from "./components/Nav.jsx";
-import Cards from "./components/Cards.jsx";
-import ErrorAlert from "./components/ErrorAlert.jsx";
+import Home from "./components/Home";
+import Nav from "./components/Nav/";
+import Cards from "./components/Cards/Cards.jsx";
+import MoreDetails from "./components/MoreDetails/index.jsx";
+import ErrorAlert from "./components/Others/Errors/Index.jsx";
 
 export default function App() {
   const [darkMode, setDark] = useState({ isActive: false, class: "-light" });
@@ -18,9 +21,31 @@ export default function App() {
 
   return (
     <div className={`App App${darkMode.class}`}>
-      <Nav darkMode={darkMode} handleThemeChange={handleThemeChange} />
-      <Cards darkMode={darkMode} />
-      <ErrorAlert darkMode={darkMode} error={error} />
+      <Route
+        path='/'
+        exact
+        render={()=>{
+          return <Home darkMode={darkMode} handleThemeChange={handleThemeChange}/>
+        }}
+      />
+      <Route
+        path='/search'
+        render={() => {
+          return (
+            <div>
+              <Nav darkMode={darkMode} handleThemeChange={handleThemeChange} />
+              <Cards darkMode={darkMode} />
+              <ErrorAlert darkMode={darkMode} error={error} />
+            </div>
+          )
+        }}
+      />
+      <Route
+        path='/details/:id'
+        render={()=>{
+          return <MoreDetails darkMode={darkMode}/>
+        }}
+      />
     </div>
   );
 }

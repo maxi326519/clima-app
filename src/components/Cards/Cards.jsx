@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { removeCity } from '../redux/actions'
+import { removeCity } from '../../redux/actions'
 
-import Card from './Card';
-import ErrorAlert from './ErrorAlert';
-import './styles/Cards.scss';
+import Card from '../Card';
+import ErrorAlert from '../Others/Errors/Index';
+import './Cards.scss';
 
 export default function Cards({ darkMode }) {
 

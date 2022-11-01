@@ -1,0 +1,95 @@
+.to-left{
+    position: relative;
+    animation: 1s ease toLeft forwards;
+}
+
+.to-right{
+    position: relative;
+    animation: 1s ease toRight forwards;
+}
+
+.to-up{
+    position: relative;
+    animation: 1s ease toUp forwards;
+}
+
+.to-bottom{
+    position: relative;
+    animation: 1s ease toBottom forwards;
+}
+
+.to-show{
+    position: relative;
+    animation: 1s ease toShow forwards;
+}
+
+.to-hidden{
+    position: relative;
+    animation: 0.2s ease-in toHidden forwards;
+}
+
+@keyframes toShow{
+    0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100%{
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes toHidden{
+    0%{
+        opacity: 100%;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes toLeft{
+    0%{
+        right: -10%;
+        opacity: 0;
+    }
+    100%{
+        right: 0;
+        opacity: 100%;
+    }
+}
+
+@keyframes toRight{
+    0%{
+        left: -10%;
+        opacity: 0;
+    }
+    100%{
+        left: 0;
+        opacity: 100%;
+    }
+}
+
+@keyframes toUp{
+    0%{
+        bottom: -10%;
+        opacity: 0;
+    }
+    100%{
+        bottom: 0;
+        opacity: 100%;
+    }
+}
+
+@keyframes toBottom{
+    0%{
+        top: -10%;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 100%;
+    }
+}

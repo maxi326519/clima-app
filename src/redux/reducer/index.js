@@ -1,14 +1,18 @@
 import { GET_CITY, REMOVE_CITY, GET_LOCATION } from '../actions';
 import dataTest from '../weather.json'
+import locationTest from '../location.json'
+import TEST from '../test.json'
+
+console.log(TEST);
 
 const initialState = {
     cities: {
         error: {},
-        data: [ dataTest ] 
+        data: TEST.isActive ? dataTest.filter(data => data.nro < 10) : []
     },
     location: {
         error: {},
-        data: {}
+        data: TEST.isActive ? locationTest : {}
     }
 }
 

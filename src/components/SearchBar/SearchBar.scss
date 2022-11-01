@@ -1,4 +1,4 @@
-@use 'var';
+@use '../Others/styles/var.scss';
 
 .search-bar{
     display: inline-block;
@@ -6,8 +6,8 @@
     input, button{
         overflow: hidden;
         padding: 5px 10px;
-        border-width: 2px;
-        border-style: solid;
+        border-width: 2px !important;
+        border-style: solid !important;
         border-radius: 20px;
         transition: 0.2s;
     }
@@ -17,34 +17,11 @@
     }
 
     input{
-        margin-right: 10px;
+        margin: 0 10px;
 
         &:hover{
             box-shadow: 0 0 5px 5px #0004;
             border-color: var.$primary;
-        }
-    }
-
-    button{
-        border-color: var.$primary;
-        background-color: var.$primary; 
-        color: white;
-
-        &:hover{
-            cursor: pointer;
-            color: var.$primary;
-            background-color: white;
-            border-color: var.$primary;
-            box-shadow: 0 0 5px 5px #0004;
-        }
-
-        &:active{
-            color: var.$primary;
-            background-color: white;
-            border-color: var.$primary;
-            box-shadow: 0 0 5px 5px #0004;
-            filter:brightness(80%);
-            transform: scale(0.95);
         }
     }
 
@@ -98,23 +75,6 @@
 
         &:hover{
             border-color: var.$secundary;
-            box-shadow: none;
-        }
-    }
-
-    button{
-        background-color: var.$background-dark;
-        border-color: var.$background-2;
-
-        &:hover{
-            background-color: var.$background-2;
-            border-color: var.$secundary;
-            color: var.$secundary;
-            box-shadow: none;
-        }
-
-        &:active{
-            background-color: var.$background-2;
             box-shadow: none;
         }
     }

@@ -1,4 +1,4 @@
-@use 'var';
+@use '../Others/styles/var.scss';
 
 .container-card{
     overflow: hidden;
@@ -22,7 +22,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px;
+        padding: 20px 30px;
         color: white;
 
         .card__close{
@@ -44,55 +44,31 @@
         }
 
         .card__name{
-            position: relative;
-            width: max-content;
-            font-weight: bold;
-            font-size: 20px;
+            font-size: 25px;
             margin-bottom: 20px;
-            border-bottom: 1px solid transparent;
-            cursor: pointer;
-
-            &:before{
-                content: 'More';
-                position: absolute;
-                opacity: 0;
-                bottom: -100%;
-                left: 32%;
-                padding: 8px;
-                font-weight: bold;
-                font-size: 12px;
-                border-radius: 15px;
-                background-color: white;
-                color: var.$primary;
-                transition: 0.5s;
-            }
-
-            &:hover{
-                filter: brightness(90%);
-                border-color: white;
-
-                &:before{
-                    opacity: 100%;
-                    bottom: -150%;
-                    transition: 0.5s;
-                }
-            }
         }
 
         .card__data{
             display: flex;
+            margin-bottom: 20px;
 
             .data__climate{
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
+                font-size: 20px;
                 padding: 0 10px;
                 margin-right: 20px;
                 border-radius: 12px;
                 background-color: #fff2;
             }
-        }
 
+        }
+        
+        .btn{
+            padding: 5px 15px;
+            font-weight: normal;
+        }
     }
 
     &:hover{
@@ -116,22 +92,6 @@
     }
 }
 
-.loading {
-    .card{
-        height: 0;
-        width: 0;
-        transform: scale(0);
-    }
-    
-    .gif{
-        opacity: 100%;
-        height: 80px;
-        height: 50px;
-        transform: scale(1);
-        display: block;
-    }
-}
-
 .container-card-dark .card .card__name:before{
     background-color: var.$background-2;
     color: var.$secundary;
@@ -140,14 +100,4 @@
 
 .container-card, .gif, .card, .card__close{
     transition: 0.2s;
-}
-    
-@keyframes loading{
-    0% {
-        transform: scale(0);
-    }
-
-    100% {
-        transform: scale(1);
-    }
 }
